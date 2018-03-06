@@ -1,0 +1,11 @@
+﻿  stdafx.cpp
+  GraphicWindow.cpp
+  MainMenu.cpp
+  NumericMethods.cpp
+  ParticleChain.cpp
+  ParticleEnergyLevels.cpp
+  Soliton.cpp
+  Generating code
+  All 256 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  NumericMethods.vcxproj -> C:\Users\User\OneDrive\Documents\Programming\NumericMethods\x64\Release\NumericMethods.exe
