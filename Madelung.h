@@ -15,11 +15,12 @@ private:
 
 private:
 	double CalculateError(double A);
-	double CalculateFunction(double Ng, 
-				double Nr, 
-				double r, 
-				double g, 
-				double q, 
-				double G);
+	double CalculateFunction(
+                             double Ng,
+                             double Nr,
+                             double r,
+                             double g,
+                             double q,
+                             double G);
 };
 

@@ -72,7 +72,7 @@ void Croning::ShowSolutions()
 
 	FindEnergies();
 	
-	cout << "+++++++++ZONES++++++++++++" << endl;
+	cout << "\n+++++++++ZONES++++++++++++" << endl;
 	cout << "++POINT+|+++++MASS++++|+++ENERGY++++|" << endl;
 	for (int i = 0; i < 5; i++)
 	{

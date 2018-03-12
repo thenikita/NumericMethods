@@ -17,10 +17,10 @@ ParticleChain::ParticleChain(int particleAmount, int time)
 	ParticleChain::targetTime = time;
 
 	ParticleChain::particleAmount = particleAmount;
-	cout << "Particles: " << ParticleChain::particleAmount << endl;
 
 	GenerateParticles();
 
+    cout << "Initial state of particles" << endl;
 	for (int i = 0; i < ParticleChain::particleAmount; i++)
 	{
 		cout << particles[i].GetCoordinate() << " " << particles[i].GetDeviation() << endl;
@@ -49,11 +49,11 @@ vector<double> ParticleChain::GetChain()
 
 void ParticleChain::MakeIterations()
 {
-	std::ofstream file;
-	file.open("file.txt");
+	std::ofstream resultDataFile;
+	resultDataFile.open("particlechain_results.txt");
 
-	std::ofstream middle;
-	middle.open("middle.txt");
+	std::ofstream middleDataFile;
+	middleDataFile.open("particlechain_middle.txt");
 
 	coefs[0][0] = 0;
 	coefs[0][1] = 0;
@@ -275,18 +275,18 @@ void ParticleChain::MakeIterations()
 		//Sleep(10);
 		
 		
-		middle << currentTime << " " << particles[15].GetDeviation() << endl;
+		middleDataFile << currentTime << " " << particles[15].GetDeviation() << endl;
 
 	}
 
 	//TESTOUTPUT
 	for (int i = 0; i < particleAmount; i++)
 	{
-		file << particles[i].GetCoordinate() << endl;
+		resultDataFile << particles[i].GetCoordinate() << endl;
 	}
 	for (int i = 0; i < particleAmount; i++)
 	{
-		file << particles[i].GetDeviation() << endl;
+		resultDataFile << particles[i].GetDeviation() << endl;
 	}
 	//TESTOUTPUT
 }

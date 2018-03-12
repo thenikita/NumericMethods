@@ -81,7 +81,7 @@ void Soliton::GenerateParticles()
 void Soliton::ToString()
 {
 	std::ofstream file;
-	file.open("file.txt");
+	file.open("solitonlog.txt");
 
 	cout << "logging..." << endl;
 
@@ -100,10 +100,19 @@ void Soliton::ToString()
 
 void Soliton::MakeIterations()
 {
+    
+    int percent = 0;
 	while (currentTime < targetTime)
 	{
 		currentTime += dt;
-		cout << "time is: " << currentTime << "\r";
+        
+        int tempPerc = 100 * currentTime / targetTime;
+        
+        if (percent != tempPerc) {
+            
+            percent = tempPerc;
+            cout << "Processed " << percent << " %   " << "\r" << std::flush;
+        }
 
 		for (int i = 2; i < particleAmount + 2; i++)
 		{
@@ -126,7 +135,7 @@ void Soliton::MakeIterations()
 	
 		//ToString();
 	}
-	cout << endl;
+	//cout << endl;
 }
 
 double Soliton::f(int i)

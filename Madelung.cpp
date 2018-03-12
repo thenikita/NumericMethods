@@ -13,10 +13,24 @@ Madelung::Madelung()
 	//cout << CalculateError(2) << endl;
 	G1 = 1;
 	G = G1;
-	F = CalculateFunction(6, 8, sqrt(3) / 2, 2 * PI, 1, 0.5) + 2 * 0.5 / sqrt(PI);
+	F = CalculateFunction(
+                          6,
+                          8,
+                          sqrt(3) / 2,
+                          2 * PI,
+                          1,
+                          0.5)
+        + 2 * 0.5 / sqrt(PI);
 	while (G1 < 10)
 	{
-		Fnext = (CalculateFunction(6, 8, sqrt(3) / 2, 2 * PI, 1, G1) + 2 * (G1) / sqrt(PI));
+		Fnext = CalculateFunction(
+                                  6,
+                                  8,
+                                  sqrt(3) / 2,
+                                  2 * PI,
+                                  1,
+                                  G1)
+                + 2 * (G1) / sqrt(PI);
 		
         if (Fnext < F)
 		{
@@ -28,10 +42,34 @@ Madelung::Madelung()
 	}
 	cout << "G = " << G << endl;
 
-	a1 = CalculateFunction(6, 8, sqrt(3) / 2, 2 * PI, 1, G) + 2 * (G) / sqrt(PI);
-	a2 = CalculateFunction(8, 6, 1, 2 * PI*sqrt(3), -1, G) + a1;
-	a3 = CalculateFunction(24, 12, sqrt(2), 2 * PI*sqrt(5), +1, G) + a2;
-	cout << "a1 = " << a1 << endl;
+	a1 = CalculateFunction(
+                           6,
+                           8,
+                           sqrt(3) / 2,
+                           2 * PI,
+                           1,
+                           G)
+        + 2 * (G) / sqrt(PI);
+    
+	a2 = CalculateFunction(
+                           8,
+                           6,
+                           1,
+                           2 * PI*sqrt(3),
+                           -1,
+                           G)
+        + a1;
+    
+	a3 = CalculateFunction(
+                           24,
+                           12,
+                           sqrt(2),
+                           2 * PI * sqrt(5),
+                           1,
+                           G)
+        + a2;
+	
+    cout << "a1 = " << a1 << endl;
 	cout << "a2 = " << a2 << endl;
 	cout << "a3 = " << a3 << endl;
 
@@ -71,7 +109,7 @@ double Madelung::CalculateError(double A)
 	}
 	x = A;
 	F = exp(-pow(x, 2));
-	S = (S + F)*h / 3;
+	S = (S + F) * h / 3;
 	return S;
 }
 
