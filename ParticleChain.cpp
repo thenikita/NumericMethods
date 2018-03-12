@@ -1,9 +1,9 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "ParticleChain.h"
 #include <iostream>
 #include <fstream>
 #include <cmath>
-#include <Windows.h>
+//#include <Windows.h>
 
 using std::vector;
 using std::cout;

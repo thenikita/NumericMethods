@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 
 #include "MainMenu.h"
@@ -21,7 +21,8 @@ MainMenu::MainMenu()
 	cout << "3. Soliton.\n";
 	cout << "4. Madelunger.\n";
 	cout << "5. Croning-Pennie.";
-	cout << endl;
+    cout << "\n************************************************\n";
+    cout << endl;
 
 	int selector;
 	cin >> selector;
@@ -70,8 +71,8 @@ void MainMenu::RunSelectedProgram( int selector )
 		break;
 
 	case 5:
-		cout << "Calculating Cronong-Penny...";
-		double K;
+		cout << "Calculating Croning-Penny...";
+		//double K;
 		Croning::Croning();
 		break;
 	}

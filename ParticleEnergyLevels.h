@@ -11,7 +11,7 @@ private:
 	 std::vector<double> GetLevels( double k, double alpha );
 	 std::vector<double> GetFrequency( double k, double l[3] );
 
-	 void ParticleEnergyLevels::ShowResults();
+	 void ShowResults();
 
 	 double results[620][6];
 };

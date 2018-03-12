@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Madelung.h"
 
 #include <iostream>
@@ -10,14 +10,15 @@ const double PI = 3.14159;
 
 Madelung::Madelung()
 {
-	cout << CalculateError(2) << endl;
+	//cout << CalculateError(2) << endl;
 	G1 = 1;
 	G = G1;
 	F = CalculateFunction(6, 8, sqrt(3) / 2, 2 * PI, 1, 0.5) + 2 * 0.5 / sqrt(PI);
 	while (G1 < 10)
 	{
 		Fnext = (CalculateFunction(6, 8, sqrt(3) / 2, 2 * PI, 1, G1) + 2 * (G1) / sqrt(PI));
-		if (Fnext < F)
+		
+        if (Fnext < F)
 		{
 			G = G1;
 		}
@@ -76,8 +77,13 @@ double Madelung::CalculateError(double A)
 
 double Madelung::CalculateFunction(double Ng, double Nr, double r, double g, double q, double G)
 {
-	double value;
-	value = 4 * PI*Ng*exp(-pow(g, 2)*0.25 / pow(G, 2))*(-2) / pow(g, 2) + Nr * q*(1 - 2 * CalculateError(G*r) / sqrt(PI)) / r;
+	double value = 4 * PI * Ng
+                    * exp(-pow(g, 2) * 0.25 / pow(G, 2))
+                    * (-2)
+                    / pow(g, 2)
+    
+                + Nr * q * (1 - 2 * CalculateError(G*r)
+                    / sqrt(PI)) / r;
 	return value;
 }
 

@@ -1,9 +1,9 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Croning.h"
 
 #include <math.h>
 #include <iostream>
-#include <Windows.h>
+//#include <Windows.h>
 
 using std::cout;
 using std::cin;

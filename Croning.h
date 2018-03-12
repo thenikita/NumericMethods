@@ -33,4 +33,3 @@ private:
 	void FindEnergies();
 	double CalculateEnergyInPoint(double x, double e);
 };
-

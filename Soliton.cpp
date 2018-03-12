@@ -1,9 +1,9 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Soliton.h"
 #include <math.h>
 #include <iostream>
 #include <fstream>
-#include <Windows.h>
+//#include <Windows.h>
 
 using std::cout;
 using std::cin;
