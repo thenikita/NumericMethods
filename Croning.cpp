@@ -67,6 +67,7 @@ void Croning::ShowSolutions()
 
 	effectivePoints[1] = FindSolution(3, -0.01, 2);
 	effectivePoints[2] = FindSolution(4, 0.01, 2);
+    effectivePoints[5] = FindSolution(8, -0.01, 2);
 	
 	FindEffectiveMasses();
 
@@ -74,10 +75,10 @@ void Croning::ShowSolutions()
 	
 	cout << "\n+++++++++ZONES++++++++++++" << endl;
 	cout << "++POINT+|+++++MASS++++|+++ENERGY++++|" << endl;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		cout << effectivePoints[i] << " | " 
-			<< effectiveMasses[i] << " | " 
+        << effectiveMasses[i] / Croning::m << " | "
 			<< energies[i] << " | "
 			<< endl;
 	}
@@ -144,7 +145,7 @@ void Croning::ShowEnergies()
 
 void Croning::FindEffectiveMasses()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		effectiveMasses[i] = CalculateEffectiveMassInPoint(effectivePoints[i]);
 	}
@@ -157,7 +158,7 @@ double Croning::CalculateEffectiveMassInPoint(const double x)
 
 void Croning::FindEnergies()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		energies[i] = CalculateEnergyInPoint(effectivePoints[i], 0);
 	}
@@ -165,6 +166,10 @@ void Croning::FindEnergies()
 
 double Croning::CalculateEnergyInPoint(double x, double e)
 {
-	//double m = CalculateEffectiveMassInPoint(x);
 	return e + (h * h * x * x) / (2 * m * a * a);
 }
+
+//Массы пересчитать в массы жлектрона а энергии в джоулях
+//кронинг пени
+//моделунг
+//цезий хлоу натрий хлор

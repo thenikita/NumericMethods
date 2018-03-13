@@ -246,17 +246,12 @@ void ParticleChain::MakeIterations()
 
 		if (abs(error) > accuracy / 2.0)
 		{
-			//currentTime -= dt;
 			dt /= 2.0;
-			//cout << "big error" << endl;
 		}
 		else if (abs(error) <= (accuracy / 32.0))
 		{
 			dt *= 2.0;
-			//cout << "small error" << endl;
 		}
-
-		//cout << dt << " " << currentTime << " " << endl;
 
 		//applying deviations
 		for (int i = 1; i < particleAmount - 1; i++)

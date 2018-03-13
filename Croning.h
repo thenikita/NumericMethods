@@ -5,7 +5,7 @@ public:
 	Croning();
 	~Croning();
 private:
-	double a = 2e-8;
+	double a = 2e-10;
 	double omegaA = 4;
 	double m = 9.1e-31;
 	double h = 1.054e-34;

@@ -49,7 +49,7 @@ void Soliton::GenerateParticles()
 
 		coordinate = dx * (i - 2);
 
-		deviation = A * cos(2* PI * (i - 2) / (particleAmount - 1));
+		deviation = A * cos(2 * PI * (i - 2) / (particleAmount - 1));
 
 		Particle ithParticle(coordinate, deviation, 0);
 
@@ -88,14 +88,14 @@ void Soliton::ToString()
 	file << "+++++++++" << endl;
 	for (int i = 2; i <= particleAmount + 1; i++)
 	{
-		file << particles[i].GetCoordinate() << endl;
+		file << particles[i].GetCoordinate() << " " << particles[i].GetDeviation() << endl;
 	}
-
+    /*
 	file << "+++++++++" << endl;
 	for (int i = 2; i <= particleAmount + 1; i++)
 	{
 		file << particles[i].GetDeviation() << endl;
-	}
+	}*/
 }
 
 void Soliton::MakeIterations()
@@ -197,3 +197,5 @@ double Soliton::Particle::GetSpeed()
 {
 	return Particle::speed;
 }
+
+// 

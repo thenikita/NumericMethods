@@ -93,6 +93,7 @@ double Madelung::CalculateError(double A)
 	x = 0;
 	F = exp(-pow(x, 2));
 	S = F;
+    
 	while (i < n)
 	{
 		x = x + h;
@@ -125,3 +126,4 @@ double Madelung::CalculateFunction(double Ng, double Nr, double r, double g, dou
 	return value;
 }
 
+// График маделунга от G, для 1-3 кругов соседей.
